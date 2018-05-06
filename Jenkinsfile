@@ -1,13 +1,14 @@
 pipeline {
   agent {
     docker {
-      image 'mkenney/npm'
+      image 'npm:7.0-alpine'
     }
 
   }
   stages {
     stage('npm install') {
       steps {
+        pwd()
         sh 'npm install '
       }
     }
