@@ -1,8 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'mkenney/npm:7.0-alpine'
-      args 'git clone https://github.com/leonjalfon1/nodejs-demoapp.git && cd nodejs-demoapp && npm install'
+      image 'publicisworldwide/jenkins-slave'
     }
 
   }
