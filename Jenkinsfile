@@ -1,7 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'npm:7.0-alpine'
+      image 'mkenney/npm:7.0-alpine'
+      args 'git clone https://github.com/leonjalfon1/nodejs-demoapp.git && cd nodejs-demoapp && npm install'
     }
 
   }
