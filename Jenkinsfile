@@ -10,9 +10,8 @@ pipeline {
       steps {
         pwd()
         sh '''ls
-yum install -y nodejs npm
-npm install
-'''
+sudo yum install -y nodejs npm
+npm install'''
       }
     }
   }
