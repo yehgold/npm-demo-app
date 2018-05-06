@@ -9,7 +9,8 @@ pipeline {
     stage('npm install') {
       steps {
         pwd()
-        sh 'npm install '
+        sh '''ls
+'''
       }
     }
   }
