@@ -29,14 +29,13 @@ Run Tests:
 npm test
 ```
 
+create zip file
+```
+npm run build
+```
+
 Start the Application:
 ```
 npm start
 ```
 
-
-create zip file
-```
-
-npm run build
-```
