@@ -13,18 +13,21 @@ pipeline {
           agent any
           steps {
             sh 'echo npm run test'
+            sleep 5
           }
         }
         stage('test 2') {
           agent any
           steps {
             sh 'echo npm run test'
+            sleep 10
           }
         }
         stage('test 3') {
           agent any
           steps {
             sh 'echo npm run test'
+            sleep 7
           }
         }
       }
@@ -66,7 +69,7 @@ pipeline {
     stage('notification') {
       agent any
       steps {
-        mail(subject: 'build end', body: 'build end', from: 'jenkins@blueocean.com', to: 'leonj@sela.co.il', replyTo: 'leonj@sela.co.il')
+        sh 'echo email'
       }
     }
   }
