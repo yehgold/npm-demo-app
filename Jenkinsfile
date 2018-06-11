@@ -4,7 +4,7 @@ pipeline {
     stage('npm install') {
       agent any
       steps {
-        sh 'npm install'
+        sh 'echo npm install'
       }
     }
     stage('npm test1') {
@@ -12,19 +12,19 @@ pipeline {
         stage('test 1') {
           agent any
           steps {
-            sh 'npm run test'
+            sh 'echo npm run test'
           }
         }
         stage('test 2') {
           agent any
           steps {
-            sh 'npm run test'
+            sh 'echo npm run test'
           }
         }
         stage('test 3') {
           agent any
           steps {
-            sh 'npm run test'
+            sh 'echo npm run test'
           }
         }
       }
