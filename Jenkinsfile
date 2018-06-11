@@ -7,12 +7,7 @@ pipeline {
   }
   stages {
     stage('npm install') {
-      agent {
-        docker {
-          image 'node'
-        }
-
-      }
+      agent any
       steps {
         sh 'npm install'
       }
@@ -20,34 +15,19 @@ pipeline {
     stage('npm test1') {
       parallel {
         stage('test 1') {
-          agent {
-            docker {
-              image 'node'
-            }
-
-          }
+          agent any
           steps {
             sh 'npm run test'
           }
         }
         stage('test 2') {
-          agent {
-            docker {
-              image 'node'
-            }
-
-          }
+          agent any
           steps {
             sh 'npm run test'
           }
         }
         stage('test 3') {
-          agent {
-            docker {
-              image 'node'
-            }
-
-          }
+          agent any
           steps {
             sh 'npm run test'
           }
@@ -55,17 +35,13 @@ pipeline {
       }
     }
     stage('docker build') {
-      agent {
-        docker {
-          image 'docker'
-        }
-
-      }
+      agent any
       steps {
-        sh 'docker build -t myapp .'
+        sh 'echo docker build -t myapp .'
       }
     }
     stage('docker push') {
+      agent any
       steps {
         sh 'echo pushed'
       }
@@ -93,6 +69,7 @@ pipeline {
       }
     }
     stage('notification') {
+      agent any
       steps {
         mail(subject: 'build end', body: 'build end', from: 'jenkins@blueocean.com', to: 'leonj@sela.co.il', replyTo: 'leonj@sela.co.il')
       }
