@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: npm-demo-app
+  labels:
+    app: npm-demo-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: npm-demo-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: npm-demo-app
+    spec:
+      containers:
+      - image: leonjalfon1/npm-demo-app:latest
+        imagePullPolicy: Always
+        name: npm-demo-app
+        ports:
+        - containerPort: 3000
+          protocol: TCP
