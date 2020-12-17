@@ -21,7 +21,7 @@ spec:
         app: npm-demo-app
     spec:
       containers:
-      - image: leonjalfon1/npm-demo-app:v1.0
+      - image: yehgold/npm-demo-app:v1.0
         imagePullPolicy: Always
         name: npm-demo-app
         ports:
